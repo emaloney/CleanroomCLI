@@ -1,0 +1,35 @@
+language: objective-c
+xcode_project: CleanroomCLI.xcodeproj
+osx_image: xcode8
+
+git:
+  depth: 1
+  submodules: false
+
+before_install:
+  - git submodule update --init
+
+install:
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
+script:
+  - ./BuildControl/bin/travisBuildHelper.sh build iOS
+  - ./BuildControl/bin/travisBuildHelper.sh test iOS
+  - ./BuildControl/bin/travisBuildHelper.sh build macOS
+  - ./BuildControl/bin/travisBuildHelper.sh test macOS
+  - ./BuildControl/bin/travisBuildHelper.sh build tvOS
+  - ./BuildControl/bin/travisBuildHelper.sh test tvOS
+  - ./BuildControl/bin/travisBuildHelper.sh build watchOS
+
+after_failure:
+  - test -f "CleanroomCLI-iOS-build.log" && tail -n 2500 "CleanroomCLI-iOS-build.log"
+  - test -f "CleanroomCLI-iOS-test.log" && tail -n 2500 "CleanroomCLI-iOS-test.log"
+  - test -f "CleanroomCLI-iOS-test.log" && LINE_BEFORE=`cat "CleanroomCLI-iOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "CleanroomCLI-iOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "CleanroomCLI-macOS-build.log" && tail -n 2500 "CleanroomCLI-macOS-build.log"
+  - test -f "CleanroomCLI-macOS-test.log" && tail -n 2500 "CleanroomCLI-macOS-test.log"
+  - test -f "CleanroomCLI-macOS-test.log" && LINE_BEFORE=`cat "CleanroomCLI-macOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "CleanroomCLI-macOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "CleanroomCLI-tvOS-build.log" && tail -n 2500 "CleanroomCLI-tvOS-build.log"
+  - test -f "CleanroomCLI-tvOS-test.log" && tail -n 2500 "CleanroomCLI-tvOS-test.log"
+  - test -f "CleanroomCLI-tvOS-test.log" && LINE_BEFORE=`cat "CleanroomCLI-tvOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "CleanroomCLI-tvOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "CleanroomCLI-watchOS-build.log" && tail -n 2500 "CleanroomCLI-watchOS-build.log"
+
