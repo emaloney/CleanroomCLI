@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B90590B1DAECB5200B4EEC0"
-               BuildableName = "CleanroomCLITests.xctest"
+               BuildableName = "CleanroomCLIUnitTests.xctest"
                BlueprintName = "CleanroomCLITests"
                ReferencedContainer = "container:CleanroomCLI.xcodeproj">
             </BuildableReference>
