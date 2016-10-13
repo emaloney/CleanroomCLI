@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		3B90590D1DAECB5200B4EEC0 /* CleanroomCLI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9059031DAECB5200B4EEC0 /* CleanroomCLI.framework */; };
-		3B9059311DAECF7400B4EEC0 /* CleanroomCLI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059301DAECF7400B4EEC0 /* CleanroomCLI.swift */; };
 		3B9059341DAECF7F00B4EEC0 /* CleanroomCLITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059331DAECF7F00B4EEC0 /* CleanroomCLITests.swift */; };
+		3B90593A1DAFC05B00B4EEC0 /* ArgumentDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059391DAFC05B00B4EEC0 /* ArgumentDeclaration.swift */; };
+		3B90593C1DAFC09400B4EEC0 /* Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B90593B1DAFC09400B4EEC0 /* Argument.swift */; };
+		3B90593E1DAFC1DA00B4EEC0 /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B90593D1DAFC1DA00B4EEC0 /* CommandLineArguments.swift */; };
+		3B9059401DAFC24B00B4EEC0 /* CommandLineArgumentsImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B90593F1DAFC24B00B4EEC0 /* CommandLineArgumentsImpl.swift */; };
+		3B9059421DAFC2D900B4EEC0 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059411DAFC2D900B4EEC0 /* ArgumentParser.swift */; };
+		3B9059441DAFE20400B4EEC0 /* ArgumentParserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059431DAFE20400B4EEC0 /* ArgumentParserExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		3B9059031DAECB5200B4EEC0 /* CleanroomCLI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanroomCLI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B90590C1DAECB5200B4EEC0 /* CleanroomCLITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanroomCLITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B90590C1DAECB5200B4EEC0 /* CleanroomCLITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = CleanroomCLITests.xctest; path = CleanroomCLIUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9059251DAECB9E00B4EEC0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		3B9059261DAECB9E00B4EEC0 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		3B9059271DAECB9E00B4EEC0 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
@@ -32,8 +37,13 @@
 		3B9059291DAECB9E00B4EEC0 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		3B90592B1DAECD9800B4EEC0 /* Info-Framework.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
 		3B90592C1DAECD9800B4EEC0 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
-		3B9059301DAECF7400B4EEC0 /* CleanroomCLI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanroomCLI.swift; sourceTree = "<group>"; };
 		3B9059331DAECF7F00B4EEC0 /* CleanroomCLITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanroomCLITests.swift; sourceTree = "<group>"; };
+		3B9059391DAFC05B00B4EEC0 /* ArgumentDeclaration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentDeclaration.swift; sourceTree = "<group>"; };
+		3B90593B1DAFC09400B4EEC0 /* Argument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Argument.swift; sourceTree = "<group>"; };
+		3B90593D1DAFC1DA00B4EEC0 /* CommandLineArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
+		3B90593F1DAFC24B00B4EEC0 /* CommandLineArgumentsImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLineArgumentsImpl.swift; sourceTree = "<group>"; };
+		3B9059411DAFC2D900B4EEC0 /* ArgumentParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentParser.swift; sourceTree = "<group>"; };
+		3B9059431DAFE20400B4EEC0 /* ArgumentParserExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentParserExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +109,12 @@
 		3B90592F1DAECF7400B4EEC0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				3B9059301DAECF7400B4EEC0 /* CleanroomCLI.swift */,
+				3B9059391DAFC05B00B4EEC0 /* ArgumentDeclaration.swift */,
+				3B9059411DAFC2D900B4EEC0 /* ArgumentParser.swift */,
+				3B9059431DAFE20400B4EEC0 /* ArgumentParserExtension.swift */,
+				3B90593B1DAFC09400B4EEC0 /* Argument.swift */,
+				3B90593D1DAFC1DA00B4EEC0 /* CommandLineArguments.swift */,
+				3B90593F1DAFC24B00B4EEC0 /* CommandLineArgumentsImpl.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -223,7 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B9059311DAECF7400B4EEC0 /* CleanroomCLI.swift in Sources */,
+				3B9059441DAFE20400B4EEC0 /* ArgumentParserExtension.swift in Sources */,
+				3B9059401DAFC24B00B4EEC0 /* CommandLineArgumentsImpl.swift in Sources */,
+				3B90593C1DAFC09400B4EEC0 /* Argument.swift in Sources */,
+				3B90593A1DAFC05B00B4EEC0 /* ArgumentDeclaration.swift in Sources */,
+				3B9059421DAFC2D900B4EEC0 /* ArgumentParser.swift in Sources */,
+				3B90593E1DAFC1DA00B4EEC0 /* CommandLineArguments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

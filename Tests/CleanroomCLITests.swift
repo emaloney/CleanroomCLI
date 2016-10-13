@@ -7,30 +7,252 @@
 //
 
 import XCTest
-@testable import CleanroomCLI
+import CleanroomCLI
 
-class CleanroomCLIUnitTests: XCTestCase {
-    
-    override func setUp() {
+class CleanroomCLIUnitTests: XCTestCase
+{
+    override func setUp()
+    {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown()
+    {
         super.tearDown()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+    func testShortFormFlag()
+    {
+        let decl = ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".characters.first!)
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        let args = try! parser.parse(arguments: ["fakeProcess.sh", "-f"])
+
+        XCTAssertTrue(args.has(declaredArgument: "foo"))
+        XCTAssertTrue(!args.has(value: "foo"))
+        XCTAssertTrue(!args.has(multipleValues: "foo"))
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
-        }
+
+    func testLongFormFlag()
+    {
+        let decl = ArgumentDeclaration(name: "foo", type: .flag, longForm: "foo")
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        let args = try! parser.parse(arguments: ["fakeProcess.sh", "--foo"])
+
+        XCTAssertTrue(args.has(declaredArgument: "foo"))
+        XCTAssertTrue(!args.has(value: "foo"))
+        XCTAssertTrue(!args.has(multipleValues: "foo"))
     }
-    
+
+    func testMultiFormFlag()
+    {
+        let decl = ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".characters.first!, longForm: "foo")
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        var args = try! parser.parse(arguments: ["fakeProcess.sh", "-f"])
+
+        XCTAssertTrue(args.has(declaredArgument: "foo"))
+        XCTAssertTrue(!args.has(value: "foo"))
+        XCTAssertTrue(!args.has(multipleValues: "foo"))
+
+        args = try! parser.parse(arguments: ["fakeProcess.sh", "--foo"])
+
+        XCTAssertTrue(args.has(declaredArgument: "foo"))
+        XCTAssertTrue(!args.has(value: "foo"))
+        XCTAssertTrue(!args.has(multipleValues: "foo"))
+    }
+
+    func testShortFormSingleValueParameter()
+    {
+        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "b".characters.first!)
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        let args = try! parser.parse(arguments: ["fakeProcess.sh", "-b", "foo"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(!args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo"])
+    }
+
+    func testLongFormSingleValueParameter()
+    {
+        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, longForm: "bar")
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        let args = try! parser.parse(arguments: ["fakeProcess.sh", "--bar", "foo"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(!args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo"])
+    }
+
+    func testMultiFormSingleValueParameter()
+    {
+        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "b".characters.first!, longForm: "bar")
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        var args = try! parser.parse(arguments: ["fakeProcess.sh", "-b", "foo"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(!args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo"])
+
+        args = try! parser.parse(arguments: ["fakeProcess.sh", "--bar", "foo"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(!args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo"])
+    }
+
+    func testShortFormMultiValueParameter()
+    {
+        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, shortForm: "b".characters.first!)
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        let args = try! parser.parse(arguments: ["fakeProcess.sh", "-b", "foo", "baz", "bat"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo", "baz", "bat"])
+    }
+
+    func testLongFormMultiValueParameter()
+    {
+        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, longForm: "bar")
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        let args = try! parser.parse(arguments: ["fakeProcess.sh", "--bar", "foo", "baz", "bat"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo", "baz", "bat"])
+    }
+
+    func testMultiFormMultiValueParameter()
+    {
+        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, shortForm: "b".characters.first!, longForm: "bar")
+
+        let parser = try! ArgumentParser(declarations: [decl])
+
+        var args = try! parser.parse(arguments: ["fakeProcess.sh", "-b", "foo", "baz", "bat"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo", "baz", "bat"])
+
+        args = try! parser.parse(arguments: ["fakeProcess.sh", "--bar", "foo", "baz", "bat"])
+
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(args.has(multipleValues: "bar"))
+        XCTAssertEqual(args.value("bar"), "foo")
+        XCTAssertEqual(args.allValues("bar"), ["foo", "baz", "bat"])
+    }
+
+    func testComplexCommandLines()
+    {
+        let parser = try! ArgumentParser(declarations: [
+            ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".characters.first!, longForm: "foo"),
+            ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "r".characters.first!, longForm: "bar"),
+            ArgumentDeclaration(name: "baz", type: .multiValue, shortForm: "z".characters.first!, longForm: "baz"),
+            ArgumentDeclaration(name: "bat", type: .flag, shortForm: "t".characters.first!, longForm: "bat"),
+            ArgumentDeclaration(name: "biz", type: .multiValue, shortForm: "i".characters.first!, longForm: "biz")
+        ])
+
+        var args = try! parser.parse(commandLine: "fakeProcess.sh -f -r 10 --baz 12 11 12 -i May 3")
+
+        XCTAssertEqual(args.command, "fakeProcess.sh")
+
+        XCTAssertTrue(args.has(declaredArgument: "foo"))
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(declaredArgument: "baz"))
+        XCTAssertTrue(!args.has(declaredArgument: "bat"))
+        XCTAssertTrue(args.has(declaredArgument: "biz"))
+
+        XCTAssertTrue(!args.has(value: "foo"))
+        XCTAssertTrue(args.has(value: "bar"))
+        XCTAssertTrue(args.has(value: "baz"))
+        XCTAssertTrue(!args.has(value: "bat"))
+        XCTAssertTrue(args.has(value: "biz"))
+
+        XCTAssertTrue(!args.has(multipleValues: "foo"))
+        XCTAssertTrue(!args.has(multipleValues: "bar"))
+        XCTAssertTrue(args.has(multipleValues: "baz"))
+        XCTAssertTrue(!args.has(multipleValues: "bat"))
+        XCTAssertTrue(args.has(multipleValues: "biz"))
+
+        XCTAssertEqual(args.value("foo"), nil)
+        XCTAssertEqual(args.value("bar"), "10")
+        XCTAssertEqual(args.value("baz"), "12")
+        XCTAssertEqual(args.value("bat"), nil)
+        XCTAssertEqual(args.value("biz"), "May")
+
+        XCTAssertEqual(args.allValues("foo"), [])
+        XCTAssertEqual(args.allValues("bar"), ["10"])
+        XCTAssertEqual(args.allValues("baz"), ["12", "11", "12"])
+        XCTAssertEqual(args.allValues("bat"), [])
+        XCTAssertEqual(args.allValues("biz"), ["May", "3"])
+
+        args = try! parser.parse(commandLine: "fakeProcess.sh ten 20 --bar --baz 12 11 --foo 12 -i May --unknown -? --bat 3")
+
+        XCTAssertEqual(args.command, "fakeProcess.sh")
+
+        XCTAssertTrue(args.has(declaredArgument: "foo"))
+        XCTAssertTrue(args.has(declaredArgument: "bar"))
+        XCTAssertTrue(args.has(declaredArgument: "baz"))
+        XCTAssertTrue(args.has(declaredArgument: "bat"))
+        XCTAssertTrue(args.has(declaredArgument: "biz"))
+
+        XCTAssertTrue(args.has(argument: "ten"))
+        XCTAssertTrue(args.has(argument: "20"))
+        XCTAssertTrue(args.has(argument: "12"))
+        XCTAssertTrue(args.has(argument: "3"))
+
+        XCTAssertTrue(!args.has(value: "foo"))
+        XCTAssertTrue(!args.has(value: "bar"))
+        XCTAssertTrue(args.has(value: "baz"))
+        XCTAssertTrue(!args.has(value: "bat"))
+        XCTAssertTrue(args.has(value: "biz"))
+
+        XCTAssertTrue(!args.has(multipleValues: "foo"))
+        XCTAssertTrue(!args.has(multipleValues: "bar"))
+        XCTAssertTrue(args.has(multipleValues: "baz"))
+        XCTAssertTrue(!args.has(multipleValues: "bat"))
+        XCTAssertTrue(args.has(multipleValues: "biz"))
+
+        XCTAssertEqual(args.value("foo"), nil)
+        XCTAssertEqual(args.value("bar"), nil)
+        XCTAssertEqual(args.value("baz"), "12")
+        XCTAssertEqual(args.value("bat"), nil)
+        XCTAssertEqual(args.value("biz"), "May")
+
+        XCTAssertEqual(args.allValues("foo"), [])
+        XCTAssertEqual(args.allValues("bar"), [])
+        XCTAssertEqual(args.allValues("baz"), ["12", "11"])
+        XCTAssertEqual(args.allValues("bat"), [])
+        XCTAssertEqual(args.allValues("biz"), ["May", "--unknown", "-?"])
+    }
 }
