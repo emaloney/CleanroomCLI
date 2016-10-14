@@ -2,6 +2,7 @@
 	<Var name="repo:host" literal="github"/>
 	<Var name="repo:name" type="dynamic" expression="$project:name"/>
 	<Var name="repo:branch" value="$ENV[BRANCH]"/> <!-- expect calling script to set this environment variable -->
+	<Var name="repo:branch:settings" type="dynamic" expression="^if($repo:branch -AND ^containsValue(^keys($versions)|$repo:branch)|$repo:branch|^if($project:branch:settings|$project:branch:settings|master))"/>
 	<Var name="repo:url:home" type="dynamic" expression="https://github.com/${repo:owner}/${repo:name}"/>
 	<Var name="repo:url:branch" type="dynamic" expression="${repo:url:home}/tree"/>
 	<Var name="repo:url:http" type="dynamic" expression="${repo:url:home}"/>
@@ -39,7 +40,6 @@
 			<Var name="Xcode" literal="8"/>
 			
 			<Var name="Carthage" literal="0.17.2"/>
-			<Var name="git" literal="2.7.4 (Apple Git-73)"/>
 			
 			<Var name="current" type="map">
 				<Var name="iOS" literal="10.0"/> 
@@ -90,6 +90,8 @@
 	<Var name="supports:tvOS" type="dynamic" expression="^containsValue($project:platforms|tvOS)"/>
 	<Var name="supports:watchOS" type="dynamic" expression="^containsValue($project:platforms|watchOS)"/>
 
+	<Var name="project:version" value="$ENV[FRAMEWORK_VERSION]"/> <!-- expect calling script to set this environment variable -->
+	<Var name="project:version:public" value="$ENV[FRAMEWORK_VERSION_PUBLIC]"/> <!-- expect calling script to set this environment variable -->
 	<Var name="project:file" type="dynamic" expression="${project:name}.xcodeproj"/>
 	<Var name="project:workspace" type="dynamic" expression="${project:name}.xcworkspace"/>
 	<Var name="project:hasWorkspace" type="dynamic" expression="^fileExists(${repo:dir}/${project:workspace})"/>

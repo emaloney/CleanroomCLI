@@ -9,7 +9,9 @@ CleanroomCLI is part of [the Cleanroom Project](https://github.com/gilt/Cleanroo
 
 ### Swift compatibility
 
-**Important:** This is the `universal-framework` branch. It uses **Swift ** and **requires Xcode ** to compile.
+**Important:** This is the `universal-framework` branch. It uses **Swift 3.0** and **requires Xcode 8** to compile.
+
+The `swift3` branch is still under active development. Expect breaking changes to the API, the build system and/or the project structure at any time. **Be sure to lock against a specific commit if you simultaneously require Swift 3 and stability.**
 
 2 other branches are also available:
 
