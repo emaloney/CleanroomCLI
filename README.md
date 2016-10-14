@@ -38,12 +38,19 @@ CleanroomCLI is provided for your use—free-of-charge—on an as-is basis. We m
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-You’ll need to [integrate CleanroomCLI into your project](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/INTEGRATION.md) in order to use [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) it provides. You can choose:
+The simplest way to integrate CleanroomCLI is with the [Carthage](https://github.com/Carthage/Carthage) dependency manager.
 
-- [Manual integration](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/INTEGRATION.md#manual-integration), wherein you embed CleanroomCLI’s Xcode project within your own, **_or_**
-- [Using the Carthage dependency manager](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/INTEGRATION.md#carthage-integration) to build a framework that you then embed in your application.
+First, add this line to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
-Once integrated, just add the following `import` statement to any Swift file where you want to use CleanroomCLI:
+```
+github "emaloney/CleanroomCLI" ~> 0.1.0
+```
+
+Then, use the `carthage` command to [update your dependencies](https://github.com/Carthage/Carthage#upgrading-frameworks).
+
+Finally, you’ll need to [integrate CleanroomCLI into your project](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/INTEGRATION.md) in order to use [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) it provides.
+
+Once successfully integrated, just add the following `import` statement to any Swift file where you want to use CleanroomCLI:
 
 ```swift
 import CleanroomCLI

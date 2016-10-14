@@ -39,9 +39,9 @@ To integrate CleanroomCLI in your workspace, you would start by adding the follo
 github "emaloney/CleanroomCLI" ~> 0.1.0
 ```
 
-This specifies that Carthage use the latest version of CleanroomCLI that is API-compatible with 0.1.0.
+This specifies that Carthage use the latest version of CleanroomCLI that is API-compatible with 0.1, i.e. any 0.1.*x* version.
 
-**Note:** Be sure to check the [latest releases](https://github.com/emaloney/CleanroomCLI/releases); there may be a newer version than 0.1.0.
+**Note:** Be sure to check the [latest releases](https://github.com/emaloney/CleanroomCLI/releases); there may be a newer version than 0.1 that is no longer API-compatible.
 
 ### 2. Download CleanroomCLI using Carthage
 
