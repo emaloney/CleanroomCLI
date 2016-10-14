@@ -56,6 +56,8 @@ Once successfully integrated, just add the following `import` statement to any S
 import CleanroomCLI
 ```
 
+See [the Integration document](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/INTEGRATION.md) for additional details on integrating CleanroomCLI into your project.
+
 
 ### API documentation
 
