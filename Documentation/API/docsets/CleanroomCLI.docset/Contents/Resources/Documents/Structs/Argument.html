@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Argument Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/Argument" class="dashAnchor"></a>
+    <a title="Argument Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CleanroomCLI Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/emaloney/CleanroomCLI"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CleanroomCLI Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Argument Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CommandLineArguments.html">CommandLineArguments</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Argument.html">Argument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ArgumentDeclaration.html">ArgumentDeclaration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ArgumentDeclaration/DeclaredType.html">– DeclaredType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ArgumentParser.html">ArgumentParser</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Argument</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Argument</span></code></pre>
+
+                </div>
+              </div>
+            <p>Represents an argument encountered by an <code><a href="../Structs/ArgumentParser.html">ArgumentParser</a></code> while parsing
+<code><a href="../Protocols/CommandLineArguments.html">CommandLineArguments</a></code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV12CleanroomCLI8Argument8argumentSS"></a>
+                    <a name="//apple_ref/swift/Property/argument" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV12CleanroomCLI8Argument8argumentSS">argument</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The first word of the argument, as it appeared on the command line.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">argument</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV12CleanroomCLI8Argument6valuesGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/values" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV12CleanroomCLI8Argument6valuesGSaSS_">values</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Any values associated with the argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">values</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV12CleanroomCLI8Argument11declarationGSqVS_19ArgumentDeclaration_"></a>
+                    <a name="//apple_ref/swift/Property/declaration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV12CleanroomCLI8Argument11declarationGSqVS_19ArgumentDeclaration_">declaration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The declaration associated with the argument, or <code>nil</code> if the
+ argument was not explicitly declared.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">declaration</span><span class="p">:</span> <span class="kt"><a href="../Structs/ArgumentDeclaration.html">ArgumentDeclaration</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV12CleanroomCLI8Argument12declaredNameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/declaredName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV12CleanroomCLI8Argument12declaredNameGSqSS_">declaredName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The declared name of the argument, or <code>nil</code> if the argument was not
+ explicitly declared.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">declaredName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vV12CleanroomCLI8Argument4nameSS"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vV12CleanroomCLI8Argument4nameSS">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The name of the argument. For declared arguments, this is the same
+ as the <code><a href="../Structs/Argument.html#/s:vV12CleanroomCLI8Argument12declaredNameGSqSS_">declaredName</a></code> property; otherwise, it is the same as the 
+ <code><a href="../Structs/Argument.html#/s:vV12CleanroomCLI8Argument8argumentSS">argument</a></code> property.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2016 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -15,7 +15,7 @@ public struct Argument
     /** The first word of the argument, as it appeared on the command line. */
     public let argument: String
 
-    /** The values associated with the argument. */
+    /** Any values associated with the argument. */
     public let values: [String]
 
     /** The declaration associated with the argument, or `nil` if the

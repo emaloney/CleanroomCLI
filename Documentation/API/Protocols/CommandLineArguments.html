@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CommandLineArguments Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/CommandLineArguments" class="dashAnchor"></a>
+    <a title="CommandLineArguments Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">CleanroomCLI Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/emaloney/CleanroomCLI"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">CleanroomCLI Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CommandLineArguments Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CommandLineArguments.html">CommandLineArguments</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Argument.html">Argument</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ArgumentDeclaration.html">ArgumentDeclaration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ArgumentDeclaration/DeclaredType.html">– DeclaredType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ArgumentParser.html">ArgumentParser</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CommandLineArguments</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">CommandLineArguments</span></code></pre>
+
+                </div>
+              </div>
+            <p>Represents a parsed set of command-line arguments created by an 
+<code><a href="../Structs/ArgumentParser.html">ArgumentParser</a></code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP12CleanroomCLI20CommandLineArguments7commandSS"></a>
+                    <a name="//apple_ref/swift/Property/command" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP12CleanroomCLI20CommandLineArguments7commandSS">command</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The command as invoked from the command line.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">command</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vP12CleanroomCLI20CommandLineArguments5namesGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/names" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP12CleanroomCLI20CommandLineArguments5namesGSaSS_">names</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The names of the arguments for which <code><a href="../Protocols/CommandLineArguments.html#/s:FP12CleanroomCLI20CommandLineArguments3hasFT8argumentSS_Sb">has(argument:)</a></code> would return
+ <code>true</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">names</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments8argumentFSSGSqVS_8Argument_"></a>
+                    <a name="//apple_ref/swift/Method/argument(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments8argumentFSSGSqVS_8Argument_">argument(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the <code><a href="../Structs/Argument.html">Argument</a></code> with the given name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">argument</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/Argument.html">Argument</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <code><a href="../Structs/Argument.html">Argument</a></code>, or <code>nil</code> if there wasn’t one named <code>name</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments3hasFT8argumentSS_Sb"></a>
+                    <a name="//apple_ref/swift/Method/has(argument:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments3hasFT8argumentSS_Sb">has(argument:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines if the argument with the given name was present in the argument
+list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="n">argument</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the argument <code>name</code> was present in the argument list; <code>false</code> otherwise.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments3hasFT16declaredArgumentSS_Sb"></a>
+                    <a name="//apple_ref/swift/Method/has(declaredArgument:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments3hasFT16declaredArgumentSS_Sb">has(declaredArgument:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines if the argument with the given name was present in the argument
+list, and if so, whether it represents an explicitly-declared argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="n">declaredArgument</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if <code>name</code> represents an declared argument that is present in the argument list. Undeclared arguments are usually treated as unrecognized by the developer.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments12declaredTypeFSSGSqOVS_19ArgumentDeclaration12DeclaredType_"></a>
+                    <a name="//apple_ref/swift/Method/declaredType(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments12declaredTypeFSSGSqOVS_19ArgumentDeclaration12DeclaredType_">declaredType(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the <code>DeclaredType</code> associated with the argument with the given name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">declaredType</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/ArgumentDeclaration.html">ArgumentDeclaration</a></span><span class="o">.</span><span class="kt">DeclaredType</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument whose <code>DeclaredType</code> is sought.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The <code>DeclaredType</code>, or <code>nil</code> if <code>isDeclared()</code> would return <code>false</code> for <code>name</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments3hasFT5valueSS_Sb"></a>
+                    <a name="//apple_ref/swift/Method/has(value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments3hasFT5valueSS_Sb">has(value:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines whether the argument with the specified name has at least one
+value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="n">value</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the argument <code>name</code> has at least one value, <code>false</code> otherwise.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments3hasFT14multipleValuesSS_Sb"></a>
+                    <a name="//apple_ref/swift/Method/has(multipleValues:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments3hasFT14multipleValuesSS_Sb">has(multipleValues:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Determines whether the argument with the specified name has multiple
+values.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">has</span><span class="p">(</span><span class="n">multipleValues</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the argument <code>name</code> has multiple values, <code>false</code> otherwise.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments5valueFSSGSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/value(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments5valueFSSGSqSS_">value(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the first string value of the argument with the given name.</p>
+
+<p>If , then this
+function will return <code>nil</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">value</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument whose string value is sought.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The first string value of the argument <code>name</code>. Always <code>nil</code> if the <code>declaredType()</code> of <code>name</code> is <code>.flag</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FP12CleanroomCLI20CommandLineArguments9allValuesFSSGSaSS_"></a>
+                    <a name="//apple_ref/swift/Method/allValues(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP12CleanroomCLI20CommandLineArguments9allValuesFSSGSaSS_">allValues(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all string values for the argument with the given name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">allValues</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the argument whose string values are sought.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>All string values for the argument <code>name</code>.</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>© 2016 <a class="link" href="http://tech.gilt.com/" target="_blank" rel="external">Gilt Groupe</a></p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
