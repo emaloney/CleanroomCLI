@@ -75,17 +75,36 @@ Apple Watch|`--platform watchos`
 
 Even though CleanroomCLI is designed as a universal framework, during the build process, Carthage splits the framework into separate binaries for each Apple platform.
 
-The binary for|Is located at
+After a successful build, you will find platform-specific binaries for `CleanroomCLI.xcodeproj` in the appropriate Carthage build folder:
+
+The binary for|Is located in
 --------------|-------------
-iPhone/iPad|`Carthage/Build/iOS/CleanroomCLI.framework`
-Macintosh|`Carthage/Build/Mac/CleanroomCLI.framework`
-Apple TV|`Carthage/Build/tvOS/CleanroomCLI.framework`
-Apple Watch|`Carthage/Build/watchOS/CleanroomCLI.framework`
+iPhone/iPad|`Carthage/Build/iOS`
+Macintosh|`Carthage/Build/Mac`
+Apple TV|`Carthage/Build/tvOS`
+Apple Watch|`Carthage/Build/watchOS`
 
 
 For further information on integrating Carthage-built frameworks, see the section on "[Adding frameworks to an application](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)" in the [Carthage documentation](https://github.com/Carthage/Carthage#carthage--).
 
-### 4. Add the import statement
+### 4. Add the necessary framework to your target
+
+Open your project window in Xcode, and press `⌘-1` to display the Project Navigator.
+
+In the lefthand pane, select the icon for your project. It will be the top item in the Project Navigator list.
+
+Next, select the Build Target to which you want to add `CleanroomCLI.framework`, and then select the General tab.
+
+Where you add the framework depends on the type of target you're building. If you're building an application, you'll need to add the framework to the **Embedded Binaries** section.
+
+Otherwise, it should go into **Linked Frameworks and Libraries**.
+
+
+### 5. Attempt to build
+
+Select the appropriate Build Scheme for your Target, and press `⌘-B` to try to build. If all goes well, your integration was successful!
+
+### You're done!
 
 Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) provided by CleanroomCLI using the statement:
 
@@ -95,63 +114,54 @@ import CleanroomCLI
 
 ## Manual Integration
 
-Manual integration involves embedding `CleanroomCLI.xcodeproj` directly in your own Xcode workspace.
+Manual integration involves embedding the Xcode project file for CleanroomCLI directly within your own Xcode workspace.
 
-> **Note:** You *must* use an Xcode workspace specifically—and not just a project file—in order to integrate CleanroomCLI manually.
+Successful manual integration depends on the particulars of your project structure and development workflow.
 
-### Integration possibilities
+> **Note:** These instructions assume that you are using an Xcode workspace specifically—and not just a project file—in order to integrate CleanroomCLI.
 
-There are several possibilities for manually integrating CleanroomCLI with your workspace.
+### Integration using Carthage and --no-build
 
-#### Carthage
-
-If you use Carthage only for downloading dependencies—and not for building them—you will want to integrate the project file found at:
+If you use the `--no-build` flag with Carthage to only downloading dependencies—and not build them—you will want to integrate the project file found at:
 
 ```
 Carthage/Checkouts/CleanroomCLI/CleanroomCLI.xcodeproj
 ```
 
-#### Git Submodules
+### Other Integrations
 
-If you’re not using Carthage, the recommended integration mechanism is to add CleanroomCLI to your git repo as a submodule. (This, of course, assumes that your project is stored in a git repo.)
+If you acquired the CleanroomCLI’s source code through some other means, you will need to locate the `CleanroomCLI.xcodeproj` project file: .
 
-For example, to install CleanroomCLI at `Libraries/CleanroomCLI`, you could issue the command:
+### 1. Adding the project files
 
-```bash
-git submodule add https://github.com/emaloney/CleanroomCLI Libraries/CleanroomCLI
-```
+Open your project window in Xcode, and press `⌘-1` to display the Project Navigator.
 
-Upon successful completion, the project file would be found at:
+Then, using Finder, drag each of the following project files into the *top level* of the Project Navigator, below your project (and any pre-existing dependencies):
 
 ```
-Libraries/CleanroomCLI/CleanroomCLI.xcodeproj
+• CleanroomCLI.xcodeproj
 ```
 
-#### Other
+Ensure that, as you add each project file, it is placed at the top level of the workspace. It must be parallel to (a sibling of) your own project, and not embedded in another project or folder.
 
-If you acquired the CleanroomCLI’s source code through some other means, locate the `CleanroomCLI.xcodeproj` file.
+### 2. Add the necessary framework to your target
 
-### 1. Embed CleanroomCLI.xcodeproj in your workspace
+In the lefthand pane of Xcode's Project Navigator, select the icon for your project. It will be the top item in the list.
 
-In Finder, located the `CleanroomCLI.xcodeproj` file that you’ll be integrating. Then, drag it into *the top level* of Xcode’s Project Navigator pane for your workspace, being careful not to drag the file *into* any other projects listed there.
+Next, select the Build Target to which you want to add `CleanroomCLI.framework`, and then select the General tab.
 
-### 2. Perform a test build
+Where you add the framework depends on the type of target you're building. If you're building an application, you'll need to add the framework to the **Embedded Binaries** section.
 
-Select the "CleanroomCLI" build scheme, and then invoke *Build* (⌘B) from the *Product* menu.
+Otherwise, it should go into **Linked Frameworks and Libraries**.
 
-If there are no buld errors, `CleanroomCLI.xcodeproj` was correctly added to the workspace.
 
-### 3. Add the necessary dependencies to your target
+### 3. Attempt to build
 
-In Xcode, select the *General* tab in the build settings for your application target. Scroll to the bottom of the screen to reveal the section entitled *Embedded Binaries* (the second-to-last section).
+Select the appropriate Build Scheme for your Target, and press `⌘-B` to try to build. If all goes well, your integration was successful!
 
-Go back to Finder, select the file `CleanroomCLI.framework`, and then drag it into the list area directly below *Embedded Binaries*.
+### You're done!
 
-If successful, you should see `CleanroomCLI.framework` listed under both the *Embedded Binaries* and *Linked Frameworks and Libraries* sections.
-
-### 4. Add the import statement
-
-You can then make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) provided by CleanroomCLI using the statement:
+Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) provided by CleanroomCLI using the statement:
 
 ```swift
 import CleanroomCLI
@@ -159,6 +169,6 @@ import CleanroomCLI
 
 ## Further Reading
 
-Want to learn more about CleanroomCLI? Check out [the README](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/README.md).
+Want to learn more about CleanroomCLI? Check out [the README](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/README.md) or [the API documentation](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html).
 
 **_Happy coding!_**
