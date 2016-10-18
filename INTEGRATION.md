@@ -1,4 +1,4 @@
-![Gilt Tech logo](https://raw.githubusercontent.com/gilt/Cleanroom/universal-framework/Assets/gilt-tech-logo.png)
+![Gilt Tech logo](https://raw.githubusercontent.com/gilt/Cleanroom/master/Assets/gilt-tech-logo.png)
 
 # CleanroomCLI Integration Notes
 
@@ -13,7 +13,7 @@ Macintosh|macOS 10.12|macOS 10.10
 Apple TV|tvOS 10.0|tvOS 9.0
 Apple Watch|watchOS 3.0|watchOS 2.0
 
-**This is the `universal-framework` branch of CleanroomCLI.** It uses **Swift 3.0** and **requires Xcode 8** to compile.
+CleanroomCLI uses **Swift 3.0** and **requires Xcode 8** to compile.
 
 ### Options for integration
 
@@ -106,7 +106,7 @@ Select the appropriate Build Scheme for your Target, and press `⌘-B` to try to
 
 ### You're done!
 
-Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) provided by CleanroomCLI using the statement:
+Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/master/Documentation/API/index.html) provided by CleanroomCLI using the statement:
 
 ```swift
 import CleanroomCLI
@@ -161,7 +161,7 @@ Select the appropriate Build Scheme for your Target, and press `⌘-B` to try to
 
 ### You're done!
 
-Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html) provided by CleanroomCLI using the statement:
+Once properly integrated, you can make use of [the API](https://rawgit.com/emaloney/CleanroomCLI/master/Documentation/API/index.html) provided by CleanroomCLI using the statement:
 
 ```swift
 import CleanroomCLI
@@ -169,6 +169,6 @@ import CleanroomCLI
 
 ## Further Reading
 
-Want to learn more about CleanroomCLI? Check out [the README](https://github.com/emaloney/CleanroomCLI/blob/universal-framework/README.md) or [the API documentation](https://rawgit.com/emaloney/CleanroomCLI/universal-framework/Documentation/API/index.html).
+Want to learn more about CleanroomCLI? Check out [the README](https://github.com/emaloney/CleanroomCLI/blob/master/README.md) or [the API documentation](https://rawgit.com/emaloney/CleanroomCLI/master/Documentation/API/index.html).
 
 **_Happy coding!_**
