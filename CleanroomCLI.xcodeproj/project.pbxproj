@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B03C0781E4432E3007E8196 /* CleanroomCLITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B03C0771E4432E3007E8196 /* CleanroomCLITests.swift */; };
 		3B90590D1DAECB5200B4EEC0 /* CleanroomCLI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9059031DAECB5200B4EEC0 /* CleanroomCLI.framework */; };
-		3B9059341DAECF7F00B4EEC0 /* CleanroomCLITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059331DAECF7F00B4EEC0 /* CleanroomCLITests.swift */; };
 		3B90593A1DAFC05B00B4EEC0 /* ArgumentDeclaration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9059391DAFC05B00B4EEC0 /* ArgumentDeclaration.swift */; };
 		3B90593C1DAFC09400B4EEC0 /* Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B90593B1DAFC09400B4EEC0 /* Argument.swift */; };
 		3B90593E1DAFC1DA00B4EEC0 /* CommandLineArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B90593D1DAFC1DA00B4EEC0 /* CommandLineArguments.swift */; };
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B03C0771E4432E3007E8196 /* CleanroomCLITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CleanroomCLITests.swift; path = CleanroomCLITests/CleanroomCLITests.swift; sourceTree = "<group>"; };
 		3B9059031DAECB5200B4EEC0 /* CleanroomCLI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CleanroomCLI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B90590C1DAECB5200B4EEC0 /* CleanroomCLIUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanroomCLIUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9059251DAECB9E00B4EEC0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		3B9059291DAECB9E00B4EEC0 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
 		3B90592B1DAECD9800B4EEC0 /* Info-Framework.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
 		3B90592C1DAECD9800B4EEC0 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
-		3B9059331DAECF7F00B4EEC0 /* CleanroomCLITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanroomCLITests.swift; sourceTree = "<group>"; };
 		3B9059391DAFC05B00B4EEC0 /* ArgumentDeclaration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArgumentDeclaration.swift; sourceTree = "<group>"; };
 		3B90593B1DAFC09400B4EEC0 /* Argument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Argument.swift; sourceTree = "<group>"; };
 		3B90593D1DAFC1DA00B4EEC0 /* CommandLineArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLineArguments.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 		3B9059321DAECF7F00B4EEC0 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				3B9059331DAECF7F00B4EEC0 /* CleanroomCLITests.swift */,
+				3B03C0771E4432E3007E8196 /* CleanroomCLITests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B9059341DAECF7F00B4EEC0 /* CleanroomCLITests.swift in Sources */,
+				3B03C0781E4432E3007E8196 /* CleanroomCLITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
