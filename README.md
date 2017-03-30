@@ -36,7 +36,7 @@ The simplest way to integrate CleanroomCLI is with the [Carthage](https://github
 First, add this line to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
 ```
-github "emaloney/CleanroomCLI" ~> 0.2.0
+github "emaloney/CleanroomCLI" ~> 0.3.0
 ```
 
 Then, use the `carthage` command to [update your dependencies](https://github.com/Carthage/Carthage#upgrading-frameworks).
