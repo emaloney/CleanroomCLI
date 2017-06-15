@@ -15,12 +15,13 @@ public struct ArgumentParser
     private let namesToDeclarations: [String: ArgumentDeclaration]
     private let argsToDeclarations: [String: ArgumentDeclaration]
 
-    private enum ArgumentError: Error
+    internal enum ArgumentError: Error
     {
         case invalidArgumentPrefix(String)
         case invalidArgumentDeclaration(String)
         case conflictingArgumentDeclaration(String)
         case invalidCommandLineInput(String)
+        case requiredValueNotPresent
     }
 
     /**

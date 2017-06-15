@@ -63,6 +63,17 @@ internal struct CommandLineArgumentsImpl: CommandLineArguments
         return val.values.first
     }
 
+    func required(_ name: String)
+        throws
+        -> String
+    {
+        guard let val = value(name) else {
+            throw ArgumentParser.ArgumentError.requiredValueNotPresent
+        }
+
+        return val
+    }
+
     func has(value name: String) -> Bool
     {
         return namesToArguments[name]?.values.first != nil
