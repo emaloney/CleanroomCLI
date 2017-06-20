@@ -21,7 +21,7 @@ public struct ArgumentParser
         case invalidArgumentDeclaration(String)
         case conflictingArgumentDeclaration(String)
         case invalidCommandLineInput(String)
-        case requiredValueNotPresent
+        case requiredValueNotPresent(String)
     }
 
     /**

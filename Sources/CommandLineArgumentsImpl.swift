@@ -68,7 +68,7 @@ internal struct CommandLineArgumentsImpl: CommandLineArguments
         -> String
     {
         guard let val = value(name) else {
-            throw ArgumentParser.ArgumentError.requiredValueNotPresent
+            throw ArgumentParser.ArgumentError.requiredValueNotPresent(name)
         }
 
         return val
