@@ -86,8 +86,7 @@ public protocol CommandLineArguments
     /**
      Returns the first string value of the argument with the given name.
 
-     If , then this
-     function will return `nil`.
+     If there are no values named `name`, then this function will return `nil`.
 
      - parameter name: The name of the argument whose string value is sought.
 
@@ -95,6 +94,18 @@ public protocol CommandLineArguments
      the `declaredType()` of `name` is `.flag`.
      */
     func value(_ name: String) -> String?
+
+    /**
+     Returns the first string value of the argument with the given name.
+
+     - throws: When there are no values named `name`, or if `name` represents
+     a `.flag`.
+
+     - parameter name: The name of the argument whose string value is sought.
+
+     - returns: The first string value of the argument `name`.
+     */
+    func required(_ name: String) throws -> String
 
     /**
      Returns all string values for the argument with the given name.
