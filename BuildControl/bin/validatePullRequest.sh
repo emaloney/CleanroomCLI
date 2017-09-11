@@ -80,6 +80,7 @@ fi
 #
 # parse the command-line arguments
 #
+QUIET_ARG=""
 OWNER="$DEFAULT_OWNER"
 while [[ $1 ]]; do
 	case $1 in
@@ -140,16 +141,17 @@ REPO_URL="ssh://github.com/$OWNER/$PROJECT_NAME"
 REPO_TEMP_DIR=`mktemp -d`
 updateStatus "Cloning $BRANCH from $REPO_URL into $REPO_TEMP_DIR"
 cd "$REPO_TEMP_DIR"
-executeCommand "git clone -q -b $BRANCH $REPO_URL"
+executeCommand "git clone --recursive $QUIET_ARG -b $BRANCH $REPO_URL"
 cd "$PROJECT_NAME"
 
 #
-# execute validateBuild.sh, preferring the one in the repo (if any)
+# execute buildCheck.sh, preferring the one in the repo (if any)
 #
-if [[ -e "./BuildControl/bin/validateBuild.sh" ]]; then
-	executeCommand "./BuildControl/bin/validateBuild.sh"
+BUILD_CHECK_SCRIPT="BuildControl/bin/buildCheck.sh"
+if [[ -e "$BUILD_CHECK_SCRIPT" ]]; then
+	executeCommand "$BUILD_CHECK_SCRIPT $QUIET_ARG"
 else
-	executeCommand "$SCRIPT_DIR/validateBuild.sh"
+	exitWithError "Couldn't find expected script at $PWD/$BUILD_CHECK_SCRIPT"
 fi
 
 updateStatus "Success! The $BRANCH branch of $PROJECT_NAME passes all checks."

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# validates that the project builds & passes all unit tests
+# checks that the project builds & passes all unit tests
 #
 # by emaloney, 11 September 2017
 #
