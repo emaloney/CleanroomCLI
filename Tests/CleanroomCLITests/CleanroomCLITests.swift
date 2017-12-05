@@ -23,7 +23,7 @@ class CleanroomCLIUnitTests: XCTestCase
 
     func testShortFormFlag()
     {
-        let decl = ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".characters.first!)
+        let decl = ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".first!)
 
         let parser = try! ArgumentParser(declarations: [decl])
 
@@ -49,7 +49,7 @@ class CleanroomCLIUnitTests: XCTestCase
 
     func testMultiFormFlag()
     {
-        let decl = ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".characters.first!, longForm: "foo")
+        let decl = ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".first!, longForm: "foo")
 
         let parser = try! ArgumentParser(declarations: [decl])
 
@@ -68,7 +68,7 @@ class CleanroomCLIUnitTests: XCTestCase
 
     func testShortFormSingleValueParameter()
     {
-        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "b".characters.first!)
+        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "b".first!)
 
         let parser = try! ArgumentParser(declarations: [decl])
 
@@ -98,7 +98,7 @@ class CleanroomCLIUnitTests: XCTestCase
 
     func testMultiFormSingleValueParameter()
     {
-        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "b".characters.first!, longForm: "bar")
+        let decl = ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "b".first!, longForm: "bar")
 
         let parser = try! ArgumentParser(declarations: [decl])
 
@@ -121,7 +121,7 @@ class CleanroomCLIUnitTests: XCTestCase
 
     func testShortFormMultiValueParameter()
     {
-        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, shortForm: "b".characters.first!)
+        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, shortForm: "b".first!)
 
         let parser = try! ArgumentParser(declarations: [decl])
 
@@ -151,7 +151,7 @@ class CleanroomCLIUnitTests: XCTestCase
 
     func testMultiFormMultiValueParameter()
     {
-        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, shortForm: "b".characters.first!, longForm: "bar")
+        let decl = ArgumentDeclaration(name: "bar", type: .multiValue, shortForm: "b".first!, longForm: "bar")
 
         let parser = try! ArgumentParser(declarations: [decl])
 
@@ -175,11 +175,11 @@ class CleanroomCLIUnitTests: XCTestCase
     func testComplexCommandLines()
     {
         let parser = try! ArgumentParser(declarations: [
-            ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".characters.first!, longForm: "foo"),
-            ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "r".characters.first!, longForm: "bar"),
-            ArgumentDeclaration(name: "baz", type: .multiValue, shortForm: "z".characters.first!, longForm: "baz"),
-            ArgumentDeclaration(name: "bat", type: .flag, shortForm: "t".characters.first!, longForm: "bat"),
-            ArgumentDeclaration(name: "biz", type: .multiValue, shortForm: "i".characters.first!, longForm: "biz")
+            ArgumentDeclaration(name: "foo", type: .flag, shortForm: "f".first!, longForm: "foo"),
+            ArgumentDeclaration(name: "bar", type: .singleValue, shortForm: "r".first!, longForm: "bar"),
+            ArgumentDeclaration(name: "baz", type: .multiValue, shortForm: "z".first!, longForm: "baz"),
+            ArgumentDeclaration(name: "bat", type: .flag, shortForm: "t".first!, longForm: "bat"),
+            ArgumentDeclaration(name: "biz", type: .multiValue, shortForm: "i".first!, longForm: "biz")
         ])
 
         var args = try! parser.parse(commandLine: "fakeProcess.sh -f -r 10 --baz 12 11 12 -i May 3")

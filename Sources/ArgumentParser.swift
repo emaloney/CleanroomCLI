@@ -44,7 +44,7 @@ public struct ArgumentParser
     public init(declarations: [ArgumentDeclaration], shortFormPrefix: String = "-", longFormPrefix: String = "--")
         throws
     {
-        guard shortFormPrefix.characters.count < longFormPrefix.characters.count else {
+        guard shortFormPrefix.count < longFormPrefix.count else {
             throw ArgumentError.invalidArgumentPrefix("The longFormPrefix string must be longer than shortFormPrefix")
         }
 
@@ -55,7 +55,7 @@ public struct ArgumentParser
 
         let hasSingleCharLongForm = declarations
             .flatMap { $0.longForm }
-            .map { $0.characters.count == 0 }
+            .map { $0.isEmpty }
             .reduce(false) { $0 || $1 }
         guard !hasSingleCharLongForm else {
             throw ArgumentError.invalidArgumentDeclaration("An ArgumentDeclaration may not contain a single-character longForm representation; single characters representations are reserved for shortForm")

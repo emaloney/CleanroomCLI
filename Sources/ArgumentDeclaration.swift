@@ -63,8 +63,8 @@ public struct ArgumentDeclaration
      */
     public init(name: String, type: DeclaredType)
     {
-        if name.characters.count == 1 {
-            self.init(name: name, type: type, shortForm: name.characters.first!, longForm: nil)
+        if name.count == 1 {
+            self.init(name: name, type: type, shortForm: name.first!, longForm: nil)
         } else {
             self.init(name: name, type: type, shortForm: nil, longForm: name)
         }
