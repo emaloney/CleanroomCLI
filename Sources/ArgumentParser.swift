@@ -54,7 +54,7 @@ public struct ArgumentParser
         }
 
         let hasSingleCharLongForm = declarations
-            .flatMap { $0.longForm }
+            .compactMap { $0.longForm }
             .map { $0.isEmpty }
             .reduce(false) { $0 || $1 }
         guard !hasSingleCharLongForm else {
