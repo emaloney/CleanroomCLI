@@ -14,7 +14,7 @@ Macintosh|macOS 10.13|macOS 10.11
 Apple TV|tvOS 11.0|tvOS 9.0
 Apple Watch|watchOS 4.0|watchOS 2.0
 
-CleanroomCLI uses **Swift 4.0** and **requires Xcode 9.0** to compile.
+CleanroomCLI uses **Swift 4.1** and **requires Xcode 9.3** to compile.
 
 ### Options for integration
 
@@ -44,12 +44,12 @@ Within to your project’s root directory, Carthage-based projects will store a 
 To integrate CleanroomCLI in your workspace, you would start by adding the following line to the `Cartfile`:
 
 ```
-github "emaloney/CleanroomCLI" ~> 0.4.0
+github "emaloney/CleanroomCLI" ~> 0.5.0
 ```
 
-This specifies that Carthage use the latest version of CleanroomCLI that is API-compatible with 0.4.0, i.e. any 0.4.*x* version.
+This specifies that Carthage use the latest version of CleanroomCLI that is API-compatible with 0.5.0, i.e. any 0.5.*x* version.
 
-**Note:** Be sure to check the [latest releases](https://github.com/emaloney/CleanroomCLI/releases); there may be a newer version than 0.4.0 that is no longer API-compatible.
+**Note:** Be sure to check the [latest releases](https://github.com/emaloney/CleanroomCLI/releases); there may be a newer version than 0.5.0 that is no longer API-compatible.
 
 ### 2. Download CleanroomCLI using Carthage
 

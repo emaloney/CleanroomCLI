@@ -10,7 +10,7 @@ CleanroomCLI is part of [the Cleanroom Project](https://github.com/gilt/Cleanroo
 
 ### Swift compatibility
 
-This is the `master` branch. It uses **Swift 4.0** and **requires Xcode 9.0** to compile.
+This is the `master` branch. It uses **Swift 4.1** and **requires Xcode 9.3** to compile.
 
 
 #### Current status
@@ -36,7 +36,7 @@ The simplest way to integrate CleanroomCLI is with the [Carthage](https://github
 First, add this line to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
 
 ```
-github "emaloney/CleanroomCLI" ~> 0.4.0
+github "emaloney/CleanroomCLI" ~> 0.5.0
 ```
 
 Then, use the `carthage` command to [update your dependencies](https://github.com/Carthage/Carthage#upgrading-frameworks).
